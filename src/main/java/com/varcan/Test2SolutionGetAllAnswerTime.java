@@ -9,7 +9,8 @@ import java.text.DecimalFormat;
  */
 public class Test2SolutionGetAllAnswerTime{
     /**
-     * 次题共相遇3次；
+     * 建议看Test2SolutionGetFirstTimeAndSecondTime,更有逻辑性，算法角度更佳；
+     * 此题共相遇3次；
      * 而这3次又有不同的停顿时间，所以值结果集有很多个值
      * @param args
      */
@@ -29,7 +30,7 @@ public class Test2SolutionGetAllAnswerTime{
 
         double phases200_A = 0;   //统计A跑了200米
         double phases200_B = 0;   //统计B跑了200米
-        double maxTime =800/((200/(200/60+2))-(200/(200/40+2)))*7/5*60;//按每200米的平均速度都超圈时为最大时间
+        double maxTime =800/((200/(200/60+2))-(200/(200/40+2)))*7/5*60;//按每200米的平均速度都超圈了时为最大时间
         DecimalFormat df = new DecimalFormat("#######0.00");
         while (second<maxTime) {
             //如果A休息
