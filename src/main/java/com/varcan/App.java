@@ -18,7 +18,9 @@ public class App {
         Double firstReachTime = Test2SolutionGetFirstTimeAndSecondTime.getFirstReachTime(40.0, 60.0, rule);
         Double secondReachTime = Test2SolutionGetFirstTimeAndSecondTime.getSecondReachTime(40.0, 60.0, rule);
         DecimalFormat df = new DecimalFormat("0.00");
-        System.out.println("第一次相遇时间"+df.format(firstReachTime));
+        if (firstReachTime <0){
+            System.out.println("该时间不存在");
+        }else System.out.println("第一次相遇时间"+df.format(firstReachTime));
         System.out.println("第二次相遇时间"+df.format(secondReachTime));
         System.out.println("Test2SolutionGetAllAnswerTime为此题第二种写法：满足该题意的所有超圈时间（包含静止状态）");
     }

@@ -22,7 +22,10 @@ public class Test2SolutionGetFirstTimeAndSecondTime {
         double restLength = rule.getRestLength();
         double i = Math.floor(overLength/restLength);//起始次数，即题意超800的最少次数；
         double b = i;//a跑i次，b跑i-b次；逻辑如下所述
-        while (true){
+        double maxNum = overLength/((restLength/(restLength/bSpeed+restTime))-(restLength/(restLength/aSpeed+restTime)))
+                * (overLength/aSpeed+restTime)/(overLength/aSpeed)/(restLength/bSpeed+restTime);
+        maxNum=Math.ceil(maxNum);//上述时间为平均速度超过时的最大次数
+        for (; i < maxNum; i++) {
             /**
              * 下述次：跑完200+休息时间这一范围计为一次
              * 下面数字即题意；
@@ -36,7 +39,7 @@ public class Test2SolutionGetFirstTimeAndSecondTime {
             }
             i++;
         }
-
+        return -1.0;
     }
 
     /**
