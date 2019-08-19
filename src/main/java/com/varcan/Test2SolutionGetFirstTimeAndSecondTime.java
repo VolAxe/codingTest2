@@ -20,14 +20,14 @@ public class Test2SolutionGetFirstTimeAndSecondTime {
         double restTime = rule.getRestTime();
         double overLength = rule.getOverLength();
         double restLength = rule.getRestLength();
+        //次：跑完200+休息时间这一范围计为一次
         double i = Math.floor(overLength/restLength);//起始次数，即题意超800的最少次数；
         double b = i;//a跑i次，b跑i-b次；逻辑如下所述
         double maxNum = overLength/((restLength/(restLength/bSpeed+restTime))-(restLength/(restLength/aSpeed+restTime)))
                 * (overLength/aSpeed+restTime)/(overLength/aSpeed)/(restLength/bSpeed+restTime);
-        maxNum=Math.ceil(maxNum);//上述时间为平均速度超过时的最大次数
+        maxNum=Math.ceil(maxNum);//按200米的平均速度计算b超圈时，b所需跑200米的最大次数；
         for (; i < maxNum; i++) {
             /**
-             * 下述次：跑完200+休息时间这一范围计为一次
              * 下面数字即题意；
              * 逻辑求得4 ； 超800米，即a多跑4个200；即4次；
              * 判断区间，第一次满足超圈时，b跑完i-4次，a正跑完i次，此时b的总时间（含休息时间）在
